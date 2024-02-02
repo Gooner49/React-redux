@@ -1,15 +1,15 @@
-import React , {Component ,useState } from 'react'
+import React , {Component , useState } from 'react'
 import './Counter.css'
 import SubCounter from './SubCounter';
-class Counter extends Component {
+const Counter = () => {
 
-    const [person, setPerson] = useState
-    ({
-      counter : 7,
+    const [idty, setIdty] = useState  ({
+      cout : 'dd' ,
       Idty : {
-        name : ""
+        Name : '',
+        Surname : ''
       }
-    });
+   });
     
 
   render  () 
