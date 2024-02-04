@@ -1,25 +1,21 @@
 import React , {Component , useState } from 'react'
 import './Counter.css'
 import SubCounter from './SubCounter';
-const Counter = () => {
+const Counter = () => 
+{
 
-    const [idty, setIdty] = useState  ({
-      cout : 'dd' ,
-      Idty : {
-        Name : '',
-        Surname : ''
-      }
+    const [Idty, setIdty] = useState 
+   ({
+      Name :  ''
    });
     
-
-  render  () 
-  {
-    const originalArr = [
+   
+  const originalArr = [
                             {vendor: 2001, bananas: 50, apples:75, oranges: 12},
                             {vendor: 2002, bananas: 25, apples:60, oranges: 82},
                             {vendor: 2003, bananas: 36, apples:41, oranges: 73},
                             {vendor: 2004, bananas: 59, apples:62, oranges: 87}
-                    ];
+                     ];
 
     console.log('Hello from counter render');
     return (
@@ -35,13 +31,13 @@ const Counter = () => {
                 <h2> Courses </h2>
                 <h3> Add Course </h3>
                 <label> Enter your name : </label>
-                    <input type = "text"  onChange = {this.handlechange1} name ={this.state.Form.name}/>
+                    <input type = "text"  onChange = {this.handlechange1} name ={this.state.Name}/>
               </form>  
           </div>
       </div>    
       );
-  }
-  cIncrement = (val) => 
+  
+  const cIncrement = (val) => 
   {
      console.log('Hello Sir from Counter.cIncrement');
      console.log('Trying to increase ' + this.state.counter + ' by a value of ' +val );
@@ -52,14 +48,14 @@ const Counter = () => {
      });
   }
 
-    handlechange1 = (e) => 
+  const handlechange1 = (e) => 
   {
     var incr = e.target.value;
     console.log('Hello Sir from Counter.handlechange1  :  '  +incr);
     this.setState(
     {
-      ...person ,
-      name : e.target.value
+      ...Idty ,
+      Name : e.target.value
     });
   }
   

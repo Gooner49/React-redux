@@ -7,7 +7,7 @@ const courseReducer = (state = [] , action) =>
     switch (action.type)
     {
         case "CREATE_COURSE" :
-            return [...state , {...action.course}];
+            return [...state , {...action.Name}];
         default  :
             return state;    
     }
