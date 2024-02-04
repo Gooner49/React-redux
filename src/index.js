@@ -5,16 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './Redux/configureStore' ;
 //import { configureStore } from '@reduxjs/toolkit';
+import { createStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-const store = configureStore();
+const store = createStore();
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxProvider store= {store}>
+    
     <App/>
-    </ReduxProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
