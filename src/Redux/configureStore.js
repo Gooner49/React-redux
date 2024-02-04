@@ -3,11 +3,11 @@ import createStore from './actions/courseActions';
 //import reduxImmutableStateInvariant from 'react-redux';
 import rootReducer from './reducers/index';
 
-const configureStore = (initialState ) => 
+const nameStore = (initialState ) => 
 {
    return createStore ( rootReducer ,initialState  );
 }
 
-export default configureStore ;
+export default nameStore ;
 
 
