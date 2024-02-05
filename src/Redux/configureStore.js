@@ -1,13 +1,14 @@
 //import {combineReducers} from 'redux';
-import createStore from './actions/courseActions';
+import { createStore ,applyMiddleware } from 'redux';
+//import createStore from './actions/courseActions';
+import {thunk} from 'redux-thunk'
 //import reduxImmutableStateInvariant from 'react-redux';
 import rootReducer from './reducers/index';
 
-const nameStore = (initialState ) => 
-{
-   return createStore ( rootReducer ,initialState  );
-}
 
-export default nameStore ;
+   const storea = createStore ( rootReducer()  );
+
+
+export default storea ;
 
 

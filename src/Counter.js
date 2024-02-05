@@ -9,6 +9,28 @@ const Counter = () =>
       Name :  ''
    });
     
+   const cIncrement = (val) => 
+   {
+      console.log('Hello Sir from Counter.cIncrement');
+      /*console.log('Trying to increase ' + this.state.counter + ' by a value of ' +val );
+       this.state.counter ++ ;
+      this.setIdty(
+      {
+        counter : this.state.Name
+      });*/
+   }
+ 
+   const handlechange1 = (e) => 
+   {
+     var incr = e.target.value;
+     console.log('Hello Sir from Counter.handlechange1  :  '  +incr);
+     this.setIdty(
+     {
+       ...Idty ,
+       Name : e.target.value
+     });
+   }
+   
    
   const originalArr = [
                             {vendor: 2001, bananas: 50, apples:75, oranges: 12},
@@ -18,7 +40,8 @@ const Counter = () =>
                      ];
 
     console.log('Hello from counter render');
-    return (
+   
+     return (
       <div>
           <div className="App">
              <SubCounter by={9} incrementMethod = {this.cIncrement}></SubCounter>
@@ -36,30 +59,7 @@ const Counter = () =>
           </div>
       </div>    
       );
-  
-  const cIncrement = (val) => 
-  {
-     console.log('Hello Sir from Counter.cIncrement');
-     console.log('Trying to increase ' + this.state.counter + ' by a value of ' +val );
-     // this.state.counter ++ ;
-     this.setState(
-     {
-       counter : this.state.counter + val
-     });
-  }
-
-  const handlechange1 = (e) => 
-  {
-    var incr = e.target.value;
-    console.log('Hello Sir from Counter.handlechange1  :  '  +incr);
-    this.setState(
-    {
-      ...Idty ,
-      Name : e.target.value
-    });
-  }
-  
-
+     
 }
 
 export default Counter;
