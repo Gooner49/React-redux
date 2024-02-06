@@ -9,11 +9,11 @@ const Counter = () =>
    {
     // var incr = e.target.value;
      console.log('Hello Sir from Counter.handlechange1  :  '  );
-     this.setIdty(
+    /* this.setIdty(
      {
        ...idty ,
        Name : e.target.value
-     });
+     });*/
    }
    
  // render () 
@@ -44,13 +44,13 @@ const Counter = () =>
                 <h2> Courses </h2>
                 <h3> Add Course </h3>
                 <label> Enter your name : </label>
-                    {/*<input type = "text"  onChange = {this.handlechange1}   name ={idty.Name}  />   */}
-              </form>  
-     </div>  
+                   <input type = "text"  onChange= { handlechange1 }  placeholder=  {"UserName"} name= {idty.Name}   />  
+                </form>  
+           </div>  
       </div>    
       );
 
-
+// name ={idty.Name}
 
 }
 
