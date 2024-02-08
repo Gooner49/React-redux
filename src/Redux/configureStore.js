@@ -4,11 +4,12 @@ import { createStore ,applyMiddleware } from 'redux';
 import {thunk} from 'redux-thunk'
 //import reduxImmutableStateInvariant from 'react-redux';
 import rootReducer from './reducers/index';
+const storebook = () => 
+{
+   const storea = createStore ( rootReducer );
+   return storea;
+}   
 
-
-   const storea = createStore ( rootReducer()  );
-
-
-export default storea ;
+export default storebook ;
 
 

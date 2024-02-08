@@ -1,4 +1,5 @@
 import React , {Component , useState } from 'react'
+import {connect} from "react-redux";
 import './Counter.css'
 import SubCounter from './SubCounter';
 const Counter = () => 
@@ -14,6 +15,15 @@ const Counter = () =>
        ...idty ,
        Name : e.target.value
      });*/
+   }
+
+   const mapStateToProps = (state,ownProps) =>
+   {
+    return {
+      names : state.Name
+    }
+
+
    }
    
  // render () 
@@ -54,4 +64,4 @@ const Counter = () =>
 
 }
 
-export default Counter;
+export default connect( mapStateToProps , mapDispatchToProps )  (Counter);
