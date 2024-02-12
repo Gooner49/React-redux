@@ -2,10 +2,20 @@ import React , {Component , useState } from 'react'
 import {connect} from "react-redux";
 import './Counter.css'
 import SubCounter from './SubCounter';
-const Counter = () => 
+import courseActions from './Redux/actions/courseActions';
+//import Counter from  './Counter'
+import PropTypes from 'prop-types';
+const mapStateToProps = (state) =>
+{
+    
+    return {
+      names : state.Name
+    };
+}
+const Counter = ({names}) => 
 {
 
-   const [idty, setIdty] = useState   ({  Name:  '', Surname: ''   });
+   const [idty, setIdty] = useState ({  Name:  'Picasso', Surname: ''   });
    const handlechange1 = (e) => 
    {
     // var incr = e.target.value;
@@ -15,15 +25,6 @@ const Counter = () =>
        ...idty ,
        Name : e.target.value
      });*/
-   }
-
-   const mapStateToProps = (state,ownProps) =>
-   {
-    return {
-      names : state.Name
-    }
-
-
    }
    
  // render () 
@@ -35,7 +36,8 @@ const Counter = () =>
                             {vendor: 2004, bananas: 59, apples:62, oranges: 87}
                      ];
 */
-    console.log('Hello from counter render');
+ //   console.log('Hello from counter render' +this.props);
+    
    
      return (
 
@@ -56,12 +58,36 @@ const Counter = () =>
                 <label> Enter your name : </label>
                    <input type = "text"  onChange= { handlechange1 }  placeholder=  {"UserName"} name= {idty.Name}   />  
                 </form>  
+                <div> <br /> </div>
+                 <button  className="button1"  onClick={routeChange} type= "button"> Login </button> 
+               {/* <h4> Current Name : {idty.Name}</h4>*/}
+                <h4> Current Name : {names}</h4>  
            </div>  
       </div>    
       );
 
-// name ={idty.Name}
-
 }
 
-export default connect( mapStateToProps , mapDispatchToProps )  (Counter);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // dispatching actions returned by action creators
+    
+    increment: (fName) => dispatch(increment()),
+   // decrement: () => dispatch(decrement()),
+   // reset: () => dispatch(reset()),
+  }
+}
+
+const increment = (fName) => 
+(
+  { 
+    type: 'CREATE_COURSE' , 
+    payload : fName
+  }
+)
+
+
+
+//export default connect( mapStateToProps , mapDispatchToProps )  (Counter);
+export default connect( mapStateToProps )  (Counter);

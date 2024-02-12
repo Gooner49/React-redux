@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Counter from './Counter';
 import reportWebVitals from './reportWebVitals';
 import storebook from './Redux/configureStore' ;
 //import { configureStore } from '@reduxjs/toolkit';
@@ -12,7 +13,7 @@ const store = storebook();
 ReactDOM.render(
   <ReduxProvider store={store}>
   <React.StrictMode>
-     <App/>
+     <Counter/>
    </React.StrictMode>
    </ReduxProvider>, 
   document.getElementById('root')
