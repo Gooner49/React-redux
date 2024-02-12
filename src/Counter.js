@@ -59,7 +59,7 @@ const Counter = ({names}) =>
                    <input type = "text"  onChange= { handlechange1 }  placeholder=  {"UserName"} name= {idty.Name}   />  
                 </form>  
                 <div> <br /> </div>
-                 <button  className="button1"  onClick={routeChange} type= "button"> Login </button> 
+                 <button  className="button1"  onClick={} type= "button"> Login </button> 
                {/* <h4> Current Name : {idty.Name}</h4>*/}
                 <h4> Current Name : {names}</h4>  
            </div>  
