@@ -5,6 +5,5 @@ import axios from "axios";
 const courseActions = (iName) => 
 {
     return { type:"CREATE_COURSE", Name : iName }
-
 }
 export default courseActions;

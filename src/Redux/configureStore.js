@@ -6,7 +6,7 @@ import {thunk} from 'redux-thunk'
 import rootReducer from './reducers/index';
 const storebook = () => 
 {
-   const storea = createStore ( rootReducer );
+   const storea = createStore ( rootReducer (), applyMiddleware(thunk));
    return storea;
 }   
 

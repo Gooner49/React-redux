@@ -5,17 +5,29 @@ import SubCounter from './SubCounter';
 import courseActions from './Redux/actions/courseActions';
 //import Counter from  './Counter'
 import PropTypes from 'prop-types';
+import { createAction } from '@reduxjs/toolkit';
 const mapStateToProps = (state) =>
-{
-    
-    return {
+({
       names : state.Name
-    };
+});
+
+const mapDispatchToProps = (dispatch) => 
+{
+  return {
+    // dispatching actions returned by action creators
+    
+    increment: (fName) => dispatch(createAction(fName)),
+   // decrement: () => dispatch(decrement()),
+   // reset: () => dispatch(reset()),
+  }
 }
-const Counter = ({names}) => 
+
+
+const Counter = (props) => 
 {
 
    const [idty, setIdty] = useState ({  Name:  'Picasso', Surname: ''   });
+   const {increment} = props;
    const handlechange1 = (e) => 
    {
     // var incr = e.target.value;
@@ -59,9 +71,9 @@ const Counter = ({names}) =>
                    <input type = "text"  onChange= { handlechange1 }  placeholder=  {"UserName"} name= {idty.Name}   />  
                 </form>  
                 <div> <br /> </div>
-                 <button  className="button1"  onClick={} type= "button"> Login </button> 
-               {/* <h4> Current Name : {idty.Name}</h4>*/}
-                <h4> Current Name : {names}</h4>  
+                 <button  className="button1"  onClick={increment("Pramila")} type= "button"> Login </button> 
+               {/* <h4> Current Name : {idty.Name}</h4>
+                <h4> Current Name : {names}</h4> */} 
            </div>  
       </div>    
       );
@@ -69,25 +81,16 @@ const Counter = ({names}) =>
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    // dispatching actions returned by action creators
-    
-    increment: (fName) => dispatch(increment()),
-   // decrement: () => dispatch(decrement()),
-   // reset: () => dispatch(reset()),
-  }
-}
 
-const increment = (fName) => 
+/*const increment = (fName) => 
 (
   { 
     type: 'CREATE_COURSE' , 
     payload : fName
   }
-)
+)*/
 
 
 
 //export default connect( mapStateToProps , mapDispatchToProps )  (Counter);
-export default connect( mapStateToProps )  (Counter);
+export default connect( mapStateToProps , mapDispatchToProps)  (Counter);
